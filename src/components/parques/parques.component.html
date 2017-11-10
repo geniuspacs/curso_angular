@@ -1,0 +1,10 @@
+<h1>{{nombre}}</h1>
+
+<ul>
+    <li>{{metros}}</li>
+    <li>{{vegetacion}}</li>
+    <li *ngIf="abierto">Abierto</li>
+    <li *ngIf="!abierto">Cerrado</li>
+</ul>
+
+<button (click)="emitirEvento()">Mostrar en el padre</button>

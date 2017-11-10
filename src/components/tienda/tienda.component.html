@@ -1,0 +1,44 @@
+<h4>Utilizar jQuery dentro de Angular</h4>
+
+<button id="botonjq">Mostrar texto</button>
+
+<p id="textojq" class="hidden alert alert-warning">
+    Texto de prueba
+</p>
+
+<div id="caja" style="border: 1px solid black; width: 150px; height: 50px">
+    vamono niñoooooooooooooooo ujajajisjwojdijalsjdaksjd as
+</div>
+
+<simple-tiny
+[elementId]="'descripcion_tienda'"
+(onEditorKeyup)="texto_editor($event)"
+>
+</simple-tiny>
+
+<hr>
+
+<h1>{{titulo}}</h1>
+<ul>
+    <li>Camiseta rosa</li>
+    <li>Gorra negra</li>
+</ul>
+
+Nombre del parque:
+<input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrar_valor()" />
+
+<div *ngIf="miParque">
+    <ul>
+        <li>{{miParque.nombre}}</li>
+        <li>{{miParque.metros}}</li>
+        <li>{{miParque.vegetacion}}</li>
+        <li *ngIf="miParque.abierto">Abierto</li>
+        <li *ngIf="!miParque.abierto">Cerrado</li>
+    </ul>
+</div>
+
+<hr>
+
+<parques *ngIf="nombreDelParque"
+[nombre]="nombreDelParque"
+(pasameLosDatos)="verDatosParque($event)"> </parques>
